@@ -3,14 +3,11 @@
   padding: 0;
   margin: 0;
   border: 0;
-
   font-family: Arial, Helvetica, sans-serif;
 }
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 :focus,
@@ -31,12 +28,9 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-size: 100%;
-  line-height: 1;
   font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  line-height: 1;
+  text-size-adjust: 100%;
 }
 input,
 button,
@@ -75,14 +69,13 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
-/*--------------------*/
 
+/* Navigation styles */
 nav {
   width: 100%;
   background-color: lightblue;
   height: 48px;
   padding: 12px;
-
   display: flex;
   align-items: center;
 }
@@ -104,7 +97,7 @@ nav {
 
 .nav-menu--open {
   transform: translateX(0%);
-  box-shadow: 4px 0px 4px 0px #00000000; 
+  box-shadow: 4px 0px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .nav-menu button {
@@ -121,24 +114,42 @@ nav {
 }
 
 .nav-menu__item {
-  display: flex;
-  align-items: center;
-
-  font-size: 15px;
-  color: #222222;
+  cursor: pointer;
   padding: 12px;
-  border-radius: 8px;
   background-color: peachpuff;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
 
+/* Submenu styles */
+.submenu {
+  display: none; /* Hidden by default */
+  margin-left: 20px; /* Indentation for submenus */
+  margin-top: -8px; /* Adjust spacing between parent and submenu */
+  padding-left: 0;
+}
+
+.submenu.visible {
+  display: block; /* Show submenu when visible class is added */
+}
+
+.submenu-item {
+  padding: 8px;
+  background-color: lightyellow;
+  border-radius: 6px;
+  margin-bottom: 8px; /* Spacing between submenu items */
+}
+
+/* Open button styles */
 .open-button {
-  padding-top: 0px; 
+  padding-top: 0px;
   text-align: center;
   width: 25px;
-  height: 23px; 
+  height: 23px;
   background-color: transparent;
   cursor: pointer;
 }
+
 .open-button:hover {
   color: rgba(255, 0, 0, 0.71);
 }
