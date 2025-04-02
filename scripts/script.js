@@ -6,10 +6,16 @@ const toggleMenu = () => {
   navMenu.classList.toggle("nav-menu--open");
 };
 
-openButton.addEventListener("click", () => {
-  toggleMenu;
+openButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleMenu();
 });
-
-closeButton.addEventListener("click", () => {
-  toggleMenu;
+closeButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+document.body.addEventListener("click", () => {
+  if (navMenu.classList.contains("nav-menu--open")) {
+    navMenu.classList.remove("nav-menu--open");
+  }
 });
